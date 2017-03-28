@@ -1,0 +1,1026 @@
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170314191742)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170314191742"]]
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-14 19:23:56 UTC], ["updated_at", 2017-03-14 19:23:56 UTC]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Cruz"], ["created_at", 2017-03-14 19:24:12 UTC], ["updated_at", 2017-03-14 19:24:12 UTC]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (9.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Cruz"], ["created_at", 2017-03-14 19:24:54 UTC], ["updated_at", 2017-03-14 19:24:54 UTC]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (49.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (24.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (15.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (7.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (17.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Cruz"], ["created_at", 2017-03-14 22:19:56 UTC], ["updated_at", 2017-03-14 22:19:56 UTC]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (11.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (9.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Cruz"], ["created_at", 2017-03-14 22:20:07 UTC], ["updated_at", 2017-03-14 22:20:07 UTC]]
+  [1m[35m (28.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (2.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (4.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Pepe"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pepe"], ["created_at", 2017-03-14 22:28:41 UTC], ["updated_at", 2017-03-14 22:28:41 UTC]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (7.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Cruz"], ["created_at", 2017-03-17 21:36:40 UTC], ["updated_at", 2017-03-17 21:36:40 UTC]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (4.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "juan"], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (4.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Cruz"], ["created_at", 2017-03-17 21:39:11 UTC], ["updated_at", 2017-03-17 21:39:11 UTC]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (17.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Cruz"], ["created_at", 2017-03-17 21:47:43 UTC], ["updated_at", 2017-03-17 21:47:43 UTC]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (15.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Cruz"], ["created_at", 2017-03-17 21:55:17 UTC], ["updated_at", 2017-03-17 21:55:17 UTC]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLists (20170317230225)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317230225"]]
+  [1m[35m (18.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "test"], ["created_at", 2017-03-17 23:09:18 UTC], ["updated_at", 2017-03-17 23:09:18 UTC]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+DEPRECATION WARNING: Passing #original_exception is deprecated and has no effect. Exceptions will automatically capture the original exception. (called from require at /home/stingo/Desktop/scripts/pruebas/ruby/rails-telegram/telegrambot/bin/rails:9)
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (9.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170317230225)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (11.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170314191742);
+
+[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-17 23:14:03 UTC], ["updated_at", 2017-03-17 23:14:03 UTC]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (8.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170317230225)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (11.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170314191742);
+
+[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-17 23:14:04 UTC], ["updated_at", 2017-03-17 23:14:04 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateJoinTableListUser (20170317231246)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "lists_users" ("list_id" integer NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317231246"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "test"], ["created_at", 2017-03-17 23:14:32 UTC], ["updated_at", 2017-03-17 23:14:32 UTC]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "pepe"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "pepe"], ["created_at", 2017-03-17 23:14:49 UTC], ["updated_at", 2017-03-17 23:14:49 UTC]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (5.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Cruz"], ["created_at", 2017-03-18 22:16:37 UTC], ["updated_at", 2017-03-18 22:16:37 UTC]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["name", "Juan Cruz"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: uniq is deprecated and will be removed from Rails 5.1 (use distinct instead) (called from block in <class:List> at /home/stingo/Desktop/scripts/pruebas/ruby/rails-telegram/telegrambot/app/models/list.rb:2)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: uniq is deprecated and will be removed from Rails 5.1 (use distinct instead) (called from block in <class:List> at /home/stingo/Desktop/scripts/pruebas/ruby/rails-telegram/telegrambot/app/models/list.rb:2)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: uniq is deprecated and will be removed from Rails 5.1 (use distinct instead) (called from block in <class:List> at /home/stingo/Desktop/scripts/pruebas/ruby/rails-telegram/telegrambot/app/models/list.rb:2)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "group_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "lists_users" ("list_id" integer NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170317231246)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-18 22:50:52 UTC], ["updated_at", 2017-03-18 22:50:52 UTC]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "group_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "lists_users" ("list_id" integer NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (20.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170317231246)[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-18 22:50:52 UTC], ["updated_at", 2017-03-18 22:50:52 UTC]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "pepe"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "pepe"], ["created_at", 2017-03-18 22:50:52 UTC], ["updated_at", 2017-03-18 22:50:52 UTC]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "test"], ["created_at", 2017-03-18 22:50:52 UTC], ["updated_at", 2017-03-18 22:50:52 UTC]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "pepe"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-18 22:55:33 UTC], ["updated_at", 2017-03-18 22:55:33 UTC]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to InitialMigration (20170317230225)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to InitialMigration (20170317230225)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "group_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "lists_users" ("list_id" integer NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "guid" integer, "name" varchar, "selected_list" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317230225"]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "pepe"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "pepe"], ["created_at", 2017-03-18 22:56:50 UTC], ["updated_at", 2017-03-18 22:56:50 UTC]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "test"], ["created_at", 2017-03-18 22:56:50 UTC], ["updated_at", 2017-03-18 22:56:50 UTC]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (1.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.8ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "groups" ("guid", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["guid", -204536552], ["name", "Pety Team"], ["created_at", 2017-03-18 23:04:11 UTC], ["updated_at", 2017-03-18 23:04:11 UTC]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Juan Cruz"], ["created_at", 2017-03-18 23:04:22 UTC], ["updated_at", 2017-03-18 23:04:22 UTC]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["name", "Juan Cruz"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (0.7ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (11.5ms)[0m  [1m[31mDELETE FROM "groups" WHERE "groups"."id" = ?[0m  [["id", 1]]
+  [1m[36mGroup Load (0.7ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (1.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (28.7ms)[0m  [1m[32mINSERT INTO "groups" ("guid", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["guid", -204536552], ["name", "Pety Team"], ["created_at", 2017-03-18 23:11:35 UTC], ["updated_at", 2017-03-18 23:11:35 UTC]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (17.3ms)[0m  [1m[31mDELETE FROM "groups" WHERE "groups"."id" = ?[0m  [["id", 2]]
+  [1m[36mGroup Load (1.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.3ms)[0m  [1m[32mINSERT INTO "groups" ("guid", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["guid", -204536552], ["name", "Pety Team"], ["created_at", 2017-03-18 23:12:43 UTC], ["updated_at", 2017-03-18 23:12:43 UTC]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (9.9ms)[0m  [1m[31mDELETE FROM "groups" WHERE "groups"."id" = ?[0m  [["id", 3]]
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (1.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.6ms)[0m  [1m[32mINSERT INTO "groups" ("guid", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["guid", -204536552], ["name", "Pety Team"], ["created_at", 2017-03-18 23:13:45 UTC], ["updated_at", 2017-03-18 23:13:45 UTC]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (28.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (8.7ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (4.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? AND ("lists"."id" != ?) LIMIT ?[0m  [["name", "test"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.1ms)[0m  [1m[33mUPDATE "lists" SET "group_id" = ?, "updated_at" = ? WHERE "lists"."id" = ?[0m  [["group_id", 4], ["updated_at", 2017-03-20 20:35:05 UTC], ["id", 1]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.7ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (7.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1027.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (1.8ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (3.9ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (1.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["name", "Juan Cruz"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (0.9ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.8ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (1.9ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 2]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["name", "Juan Cruz"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (2.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (1.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (1.7ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (1.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (5.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (20.9ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (16.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Load (3.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mList Exists (17.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "lista 2"], ["LIMIT", 1]]
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "lists" ("name", "group_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "lista 2"], ["group_id", 4], ["created_at", 2017-03-21 22:24:22 UTC], ["updated_at", 2017-03-21 22:24:22 UTC]]
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mList Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? AND ("lists"."id" != ?) LIMIT ?[0m  [["name", "lista 2"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (1.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "groups" SET "selected_list" = ?, "updated_at" = ? WHERE "groups"."id" = ?[0m  [["selected_list", 1], ["updated_at", 2017-03-21 22:26:34 UTC], ["id", 4]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "groups" SET "selected_list" = ?, "updated_at" = ? WHERE "groups"."id" = ?[0m  [["selected_list", 2], ["updated_at", 2017-03-21 22:50:05 UTC], ["id", 4]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (2.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (4.7ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 2], ["user_id", 2]]
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["name", "Juan Cruz"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mList Load (1.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.2ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND "lists_users"."user_id" = 2[0m  [["list_id", 2]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (5.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND "lists_users"."user_id" = 2[0m  [["list_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (6.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 2], ["user_id", 2]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from irb_binding at (irb):55)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from irb_binding at (irb):56)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from irb_binding at (irb):57)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND "lists_users"."user_id" = 2[0m  [["list_id", 2]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from irb_binding at (irb):59)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.6ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 2], ["user_id", 2]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (14.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.9ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 2], ["user_id", 2]]
+  [1m[35m (33.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["name", "Juan Cruz"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (1.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 2], ["user_id", 2]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["name", "Juan Cruz"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (2.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (31.7ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND "lists_users"."user_id" = 2[0m  [["list_id", 2]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (10.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 2], ["user_id", 2]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (16.8ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" ORDER BY "groups"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (4.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (4.7ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Load (0.8ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mList Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Load (1.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mList Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mList Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mGroup Load (36.8ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (6.7ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (3.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Load (1.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mList Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "test"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND "lists_users"."user_id" = 2[0m  [["list_id", 2]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 2], ["user_id", 2]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (1.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND "lists_users"."user_id" = 2[0m  [["list_id", 2]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 2], ["user_id", 2]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.0ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND "lists_users"."user_id" = 2[0m  [["list_id", 2]]
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 2], ["user_id", 2]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND "lists_users"."user_id" = 2[0m  [["list_id", 2]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 2], ["user_id", 2]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[33mUPDATE "groups" SET "selected_list" = ?, "updated_at" = ? WHERE "groups"."id" = ?[0m  [["selected_list", 1], ["updated_at", 2017-03-27 01:24:50 UTC], ["id", 4]]
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND "lists_users"."user_id" = 2[0m  [["list_id", 1]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "groups" SET "selected_list" = ?, "updated_at" = ? WHERE "groups"."id" = ?[0m  [["selected_list", 2], ["updated_at", 2017-03-27 01:30:51 UTC], ["id", 4]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" ORDER BY "lists"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists"[0m
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 1]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[35mSQL (7.0ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND "lists_users"."user_id" = 1[0m  [["list_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "lists_users" ("list_id", "user_id") VALUES (?, ?)[0m  [["list_id", 1], ["user_id", 1]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 1]]
+  [1m[35mSQL (9.7ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mselect * from users[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect * from lists_users[0m
+  [1m[35m (0.7ms)[0m  [1m[34mselect list_id, user_id from lists_users[0m
+  [1m[35m (0.7ms)[0m  [1m[34mselect list_id, user_id from lists_users[0m
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  [1m[36mGroup Load (0.8ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mList Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "lists" WHERE "lists"."name" = ? LIMIT ?[0m  [["name", "cumpleaños juan"], ["LIMIT", 1]]
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "lists" ("name", "group_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cumpleaños juan"], ["group_id", 4], ["created_at", 2017-03-27 02:08:56 UTC], ["updated_at", 2017-03-27 02:08:56 UTC]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Juan Cruz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["list_id", 2], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 2]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" INNER JOIN "lists_users" ON "users"."id" = "lists_users"."user_id" WHERE "lists_users"."list_id" = ?[0m  [["list_id", 3]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "lists_users" WHERE "lists_users"."list_id" = ? AND 1=0[0m  [["list_id", 3]]
+  [1m[35mSQL (16.8ms)[0m  [1m[31mDELETE FROM "lists" WHERE "lists"."id" = ?[0m  [["id", 3]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."group_id" = ?[0m  [["group_id", 4]]
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."guid" = ? LIMIT ?[0m  [["guid", -204536552], ["LIMIT", 1]]
