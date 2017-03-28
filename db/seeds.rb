@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(name: "pepe")
-List.create(name: "test")
+#User.create(name: "pepe")
+#List.create(name: "test")

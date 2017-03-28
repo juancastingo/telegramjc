@@ -2,7 +2,6 @@ require 'telegram/bot'
 namespace :telegram do
   desc "TODO"
   task saludar: :environment do
-
     def msg(bot, message, text)
       bot.api.send_message(chat_id: message.chat.id, text: text, force_reply: true)
       bot.listen do |message|
@@ -11,12 +10,17 @@ namespace :telegram do
     end
 
     def negrita(text)
-      "<b>" + text +  "</b>"
+      "<b>" + text + "</b>"
     end
 
     def opciones_general(bot, message, group)
-      list = List.find(group.selected_list)
-      case message.text.split[0]
+      list = List.find_by_id group.selected_list
+      if (list || message.text.split[0] == "/new_list")
+        case_text = message.text.split[0]
+      else
+        case_text = '/lists'
+      end
+      case case_text
       when '/hola'
         msg bot, message, "hola!!!! #{message.from.first_name}"
       when '/add', 'Add'
@@ -55,12 +59,17 @@ namespace :telegram do
         select_list_buttons bot, message, group
       when '/new_list'
         name = message.text.split.drop(1).join(' ')
-        new_list = List.new( { name: name, group_id: group.id } )
-        if new_list.save
-          group.selected_list = new_list.id
-          bot.api.send_message(chat_id: message.chat.id, text: 'Lista creada y seleccionada')
+        if name.blank?
+          bot.api.send_message(chat_id: message.chat.id, text: 'Debe ponerle un nombre a la lista. Comando: /new_list <name>')
         else
-          bot.api.send_message(chat_id: message.chat.id, text: 'Ya se existe una lista con ese nombre')
+          new_list = List.new( { name: name, group_id: group.id } )
+          if new_list.save
+            group.selected_list = new_list.id
+            group.save
+            bot.api.send_message(chat_id: message.chat.id, parse_mode: 'HTML', text: "Lista #{negrita new_list.name} creada y seleccionada")
+          else
+            bot.api.send_message(chat_id: message.chat.id, text: 'Ya existe una lista con ese nombre')
+          end
         end
       when '/delete_list'
         remove_list_buttons bot, message, group
@@ -69,10 +78,9 @@ namespace :telegram do
         # See more: https://core.telegram.org/bots/api#replykeyboardmarkup
         answers =
           Telegram::Bot::Types::ReplyKeyboardMarkup
-          .new(keyboard: [%w(Add Remove List), %w(Lists)], one_time_keyboard: true)
+          .new(keyboard: [%w(/add /remove), %w(/list /lists)], one_time_keyboard: true)
         bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
       when 'test'
-        byebug
         bot.api.send_message(chat_id: message.chat.id, text: "test")
       else
         bot.api.send_message(chat_id: message.chat.id, text: 'No te entiendo')
@@ -87,12 +95,16 @@ namespace :telegram do
 
     def select_list_buttons(bot, message, group)
       group_lists = group.lists.collect { |list| "#{list.id} - #{list.name}" }
-      kb = []
-      group_lists.each do |list|
-        kb << Telegram::Bot::Types::InlineKeyboardButton.new(text: list, callback_data: list)
+      if group_lists.empty?
+        bot.api.send_message(chat_id: message.chat.id, text: 'Debe crear una lista. Comando: /new_list <name>')
+      else
+        kb = []
+        group_lists.each do |list|
+          kb << Telegram::Bot::Types::InlineKeyboardButton.new(text: list, callback_data: list)
+        end
+        markup = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: kb)
+        bot.api.send_message(chat_id: message.chat.id, text: 'Seleccione una lista...', reply_markup: markup)
       end
-      markup = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: kb)
-      bot.api.send_message(chat_id: message.chat.id, text: 'Seleccione una lista...', reply_markup: markup)
     end
 
     def remove_list_buttons(bot, message, group)
@@ -149,29 +161,37 @@ namespace :telegram do
     end
 
     begin
-      token = '341011349:AAEhbIfj23FiL7PbQ9gZVA2LTx-Hu64AHBU'
+      if Rails.env.development?
+        token = '374159641:AAGDiFvLXc-5QtsE5GbM6Ykq9Qap2hNgKWc'
+      else
+        token = '341011349:AAEhbIfj23FiL7PbQ9gZVA2LTx-Hu64AHBU'
+      end
       Telegram::Bot::Client.run(token) do |bot|
         bot.listen do |message|
           case message
           when Telegram::Bot::Types::Message
-            if message.chat.type == 'group'
-              group = get_group message.chat
-              opciones_general bot, message, group
-            else
-              bot.api.send_message(chat_id: message.chat.id, text: "solo para usar en grupos...")
+            unless (message.text.nil? || message.text[0] != '/')
+              if message.chat.type == 'group'
+                group = get_group message.chat
+                opciones_general bot, message, group
+              else
+                bot.api.send_message(chat_id: message.chat.id, text: "solo para usar en grupos...")
+              end
             end
           when Telegram::Bot::Types::CallbackQuery
-            if message.message.chat.type == 'group'
-              group = get_group message.message.chat
-              call_back_query_options bot, message, group
-            else
-              bot.api.send_message(chat_id: message.message.chat.id, text: "solo para usar en grupos...")
+            unless message.message.text.nil?
+              if message.message.chat.type == 'group'
+                group = get_group message.message.chat
+                call_back_query_options bot, message, group
+              else
+                bot.api.send_message(chat_id: message.message.chat.id, text: "solo para usar en grupos...")
+              end
             end
           end
         end
       end
     rescue => e
-      puts e
+      puts "FATAL ERROR: #{e}"
     end
   end # end task
 

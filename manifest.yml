@@ -1,0 +1,13 @@
+applications:
+- path: .
+  memory: 1G
+  instances: 1
+  domain: mybluemix.net
+  name: telegramjc
+  host: telegramjc
+  disk_quota: 1024M
+  timeout: 180
+  no-route: true
+  health-check-type: none
+  buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
+  command: bundle exec rails db:migrate && rake telegram:saludar && sleep infinity
